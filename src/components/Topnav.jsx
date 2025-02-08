@@ -35,7 +35,7 @@ const Topnav = () => {
       }
 
       { query ? 
-        <div className="w-[60%] h-[50vh] top-[90%] mt-2 bg-zinc-400 absolute overflow-x-scroll">
+        <div className="w-[60%] h-[50vh] top-[90%] mt-2 bg-zinc-400 absolute overflow-x-scroll z-1">
         {
           query &&
           searches.map((search, i)=>(
