@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { asyncloadperson } from '../../store/actions/personAction';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import NoImage from "../../assets/image/noimgaejpg.jpg";
-import HorizontalCards from "../../components/HorizontalCards";
-import Dropdown from "../../components/partials/Dropdown";
+import HorizontalCards from "../HorizontalCards";
+import Dropdown from "./Dropdown";
 import Loading from './Loading';
 
 const PersonDetails = () => {

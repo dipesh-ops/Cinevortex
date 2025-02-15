@@ -3,10 +3,10 @@ import loader from "../assets/image/loader1.gif";
 import { useNavigate } from "react-router-dom";
 import axios from "../utils/axios";
 import Topnav from "./Topnav";
-import Dropdown from "./partials/Dropdown";
+import Dropdown from "./templates/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Cards from "./partials/Cards";
-import Loading from "./partials/Loading";
+import Cards from "./templates/Cards";
+import Loading from "./templates/Loading";
 
 const TvShows = () => {
 

@@ -11,8 +11,6 @@ const Trailer = () => {
     const category = pathname.includes("movie") ? "movie" : "tv"
 
     const ytVideo = useSelector((store)=> store[category].info.video);
-
-    console.log(category);
     
   return (
     <div className="z-[20] bg-black absolute w-screen h-screen top-0 left-0 flex items-center justify-center">

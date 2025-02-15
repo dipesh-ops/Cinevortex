@@ -4,8 +4,8 @@ import Sidebar from "./Sidebar"
 import Topnav from "./Topnav"
 import axios from "../utils/axios"
 import HorizontalCards from "./HorizontalCards"
-import Dropdown from "./partials/Dropdown"
-import Loading from "./partials/Loading"
+import Dropdown from "./templates/Dropdown"
+import Loading from "./templates/Loading"
 
 const Home = () => {
 
