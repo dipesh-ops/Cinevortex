@@ -5,6 +5,7 @@ import Topnav from "./Topnav"
 import axios from "../utils/axios"
 import HorizontalCards from "./HorizontalCards"
 import Dropdown from "./partials/Dropdown"
+import Loading from "./partials/Loading"
 
 const Home = () => {
 
@@ -55,7 +56,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-  ) : "Loading"
+  ) : <Loading/>
 }
 
 export default Home

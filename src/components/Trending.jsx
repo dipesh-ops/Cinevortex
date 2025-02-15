@@ -9,6 +9,9 @@ import loader from "../assets/image/loader1.gif"
 import Loading from "./partials/Loading";
 
 const Trending = () => {
+
+  document.title = `Cinevortex | Trending`
+
     const navigate = useNavigate();
 
     const [category, setCategory] = useState('all');

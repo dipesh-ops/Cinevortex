@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"
 
 const AboutUs = () => {
+  document.title = `Cinevortex | About Us`
+
     const navigate = useNavigate();
   return (
     <div className="px-20 bg-[#1F1E24]">

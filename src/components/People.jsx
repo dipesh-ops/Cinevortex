@@ -9,6 +9,8 @@ import Loading from './partials/Loading';
 
 const People = () => {
 
+  document.title = `Cinevortex | Peoples`
+
     const navigate = useNavigate();
 
     const [category, setCategory] = useState('popular');

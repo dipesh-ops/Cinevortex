@@ -10,6 +10,8 @@ import Loading from "./partials/Loading";
 
 const Popular = () => {
 
+  document.title = `Cinevortex | Popular`
+
   const navigate = useNavigate();
 
   const [category, setCategory] = useState('movie');
@@ -30,7 +32,6 @@ const Popular = () => {
         }else{
           sethasMore(false)
         }
-        console.log(data);
         
       } catch (error) {
         console.log("ERROR :", error);

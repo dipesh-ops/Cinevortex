@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom"
 
 const ContactUs = () => {
+    document.title = `Cinevortex | Contact Us`
     const navigate = useNavigate();
   return (
     <div className="pl-10">

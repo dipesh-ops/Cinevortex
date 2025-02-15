@@ -6,8 +6,11 @@ import Topnav from "./Topnav";
 import Dropdown from "./partials/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Cards from "./partials/Cards";
+import Loading from "./partials/Loading";
 
 const TvShows = () => {
+
+    document.title = `Cinevortex | Tv Shows`
 
     const navigate = useNavigate();
 
@@ -22,7 +25,6 @@ const TvShows = () => {
           const {data} = await axios.get(`/tv/${category}?page=${page}`);
   
           if (data.results.length > 0) {
-              //   setTrending(data.results)
               setshows((prevState)=>[...prevState, ...data.results]);
               setpage(page + 1)
             
@@ -77,7 +79,7 @@ const TvShows = () => {
         </InfiniteScroll>
     </div>
     </div>
-  ) : <div><img src={loader} alt="" /></div>
+  ) : <Loading/>
 }
 
 export default TvShows

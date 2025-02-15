@@ -10,6 +10,9 @@ import Loading from "./partials/Loading";
 
 
 const Movies = () => {
+
+  document.title = `Cinevortex | Movies`
+
     const navigate = useNavigate();
 
     const [category, setCategory] = useState('now_playing');

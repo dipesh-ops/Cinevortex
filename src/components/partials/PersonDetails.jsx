@@ -9,6 +9,9 @@ import Loading from './Loading';
 
 const PersonDetails = () => {
 
+  document.title = `Cinevortex | Peoples | details`
+
+
   const {id} = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();

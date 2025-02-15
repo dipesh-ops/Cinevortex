@@ -2,8 +2,12 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { asyncloadtv } from '../../store/actions/tvAction';
 import { Link, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
+import Loading from './Loading';
 
 const TvDetails = () => {
+
+  document.title = `Cinevortex | Tv shows | details`
+
 
   const {id} = useParams();
   const dispatch = useDispatch();
@@ -120,7 +124,7 @@ const TvDetails = () => {
                 </div>
       </div>
     </div>
-  ) : <div>Loading ...</div>
+  ) : <Loading/>
 }
 
 export default TvDetails
