@@ -17,11 +17,9 @@ const PersonDetails = () => {
   const navigate = useNavigate();
   const [category, setcategory] = useState("movie");
   
-  // const {id} = useSelector((store)=> store.person)
-  
   useEffect(()=>{
     dispatch(asyncloadperson(id))
-  }, [id])
+  }, [])
   
   const info = useSelector((store)=> store.person.info);
   return info ? (
