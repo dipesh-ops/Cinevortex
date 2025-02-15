@@ -14,7 +14,7 @@ const Home = () => {
 
   const getHeaderWallpaper =async ()=>{
     try {
-      const {data} = await axios.get(`/trending/all/day`);
+      const {data} = await axios.get(`/trending/${category}/day`);
 
       const randomWalls = data.results[(Math.random() * data.results.length).toFixed()]
       setWallpaper(randomWalls)

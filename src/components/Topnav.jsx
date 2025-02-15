@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import axios from "../utils/axios";
-import noimage from "../../public/noimgaejpg.jpg"
+import noimage from "../assets/image/noimgaejpg.jpg";
 
 const Topnav = () => {
 
@@ -15,12 +15,10 @@ const Topnav = () => {
   const GetSearches = async() =>{
     try {
       const {data} = await axios.get(`/search/multi?query=${query}`);
-      console.log(data.results);
       
       setSearches(data.results)
     } catch (error) {
-      console.log("Error", error);
-      
+      console.log("Error", error);      
     }
   }
   
@@ -39,7 +37,7 @@ const Topnav = () => {
         {
           query &&
           searches.map((search, i)=>(
-            <Link key={i} className="flex justify-start border-b border-2-zinc-400 p-10 w-[100%]">
+            <Link to={`/${search.media_type}/details/${search.id}`} key={i} className="flex justify-start border-b border-2-zinc-400 p-10 w-[100%]">
               <img className="w-[10vw] mr-1 h-[10vh] object-cover" src={ search.backdrop_path || search.profile_path ?`https://image.tmdb.org/t/p/original/${search.backdrop_path || search.profile_path}` : noimage} alt="" />
               <span>{search.name || search.original_title || search.title}</span>
           </Link> 
