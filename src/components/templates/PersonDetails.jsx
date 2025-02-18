@@ -95,6 +95,19 @@ const PersonDetails = () => {
               <span>{info.detail.biography}</span>
             </div>
 
+            <div className='block md:hidden mt-3'>
+              <h1 className='font-bold mb-2'>Social Media Handles</h1>
+            <div className='gap-2 flex'>
+                <a target='_blank' href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}><i className="text-2xl text-zinc-400 ri-earth-fill"></i></a>
+
+                <a target='_blank' href={`https://www.instagram.com/${info.externalid.instagram_id}`}><i className="text-2xl text-zinc-400 ri-instagram-line"></i></a>
+
+                <a target='_blank' href={`https://x.com/${info.externalid.twitter_id}`}><i className="text-2xl text-zinc-400 ri-twitter-x-fill"></i></a>
+
+                <a target='_blank' href={`https://www.facebook.com/${info.externalid.facebook_id}`}><i className="text-2xl text-zinc-400 ri-facebook-circle-fill"></i></a>
+          </div>
+            </div>
+
             <div>
               <h1 className='font-bold mt-3 mb-2'>Known For</h1>
               <HorizontalCards data={info.combinedCredits.cast}/>
