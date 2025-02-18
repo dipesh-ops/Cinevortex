@@ -2,6 +2,10 @@
 
 /* #6160C4 */
 
+body{
+  background-color: #1F1E24;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -36,7 +40,7 @@ select::-ms-expand {
 select {
   position: relative;
   display: flex;
-  width: 18em;
+  width: 14em;
   height: 3em;
   line-height: 3;
   background: #27272a;

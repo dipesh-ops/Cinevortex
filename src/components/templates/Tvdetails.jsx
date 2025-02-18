@@ -16,12 +16,12 @@ const TvDetails = () => {
 
   useEffect(()=>{
     dispatch(asyncloadtv(id))
-  }, [])
+  }, [id])
 
   const {info} = useSelector((store)=> store.tv);
 
   return info ? (
-    <div className='w-screen h-[150vh] px-20' style={{background: `linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5), rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path || info.detail.poster_path})`, backgroundPosition :"center", backgroundSize:"cover"}}>
+    <div className='w-screen h-[150vh] sm:px-5 md:px-10 lg:px-20' style={{background: `linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5), rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path || info.detail.poster_path})`, backgroundPosition :"center", backgroundSize:"cover"}}>
       {/* Part 1 navigation */}
       <nav className='w-full h-[10vh] flex items-center gap-5 text-zinc-300'>
       <Link onClick={()=> navigate(-1)} className="ri-arrow-left-line text-2xl"></Link>
@@ -31,8 +31,8 @@ const TvDetails = () => {
       </nav>
       
       {/* Part 2 */}
-      <div className='flex'>
-        <div className="shadow-[4px_7px_17px_3px_rgba(0,0,0.5)] w-[20%]">
+      <div className='flex flex-col items-center md:flex-row'>
+        <div className="shadow-[4px_7px_17px_3px_rgba(0,0,0.5)] w-[20vh] md:w-[20%]">
             <img className='w-full h-full' src={`https://image.tmdb.org/t/p/original/${info.detail.poster_path || info.detail.backdrop_path || info.detail.poster_path}`} alt="no image" />
           </div>
 

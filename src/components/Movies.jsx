@@ -53,8 +53,8 @@ const Movies = () => {
       }, [category])
   return movie.length > 0 ? (
     <div>
-      <div className="text-white p-4 flex justify-between">
-        <div className="flex text-zinc-300 w-[40vh]">
+      <div className="text-white p-4 flex flex-col md:flex-row items-center md:justify-between">
+        <div className="flex text-zinc-300 w-[40vh] p-2">
         <i onClick={()=> navigate(-1)} className="text-2xl hover:text-[#6160C4] ri-arrow-left-line"></i>
         <h1 className="text-2xl font-semibold">Movie <small>({category})</small></h1>
         </div>

@@ -5,13 +5,13 @@ const AboutUs = () => {
 
     const navigate = useNavigate();
   return (
-    <div className="px-20 bg-[#1F1E24]">
+    <div className="px-0 md:px-20 bg-[#1F1E24]">
       <div className='flex'>
         <nav className='w-full h-[8vh] flex items-center'>
           <h1 onClick={()=> navigate(-1)}><i className="text-zinc-400 text-2xl ri-arrow-left-line"></i></h1>
         </nav>
       </div>
-    <div className="px-20 flex flex-col justify-center items-center">
+    <div className="px-2 md:px-20 flex flex-col justify-center items-center">
       <div className="text-zinc-400 w-[60%] mt-5">
         <h1 className="text-3xl font-bold mb-5">ABOUT CINEVORTEX</h1>
         <p>
@@ -37,7 +37,7 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="text-zinc-400 w-[60%] mt-5">
+      <div className="text-zinc-400 w-[60%] mt-5 mb-5">
         <h1 className="text-3xl font-bold mb-5">Our Story</h1>
         <p>
             Cinevortex was born out of a shared love for cinema. Founded in [Year] by [Founder’s Name], our platform started as a small project to help friends find great movies. Over time, it grew into a thriving community of movie lovers from around the world. Today, we’re proud to be a go-to destination for anyone who loves film.

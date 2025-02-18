@@ -22,15 +22,16 @@ const PersonDetails = () => {
   }, [])
   
   const info = useSelector((store)=> store.person.info);
+  
   return info ? (
-    <div className='px-[10vh] bg-[#1F1E24] pb-10'>
+    <div className='px-2 md:px-[10vh] bg-[#1F1E24] pb-10'>
       <div className='flex'>
         <nav className='w-full h-[10vh] flex items-center'>
           <h1 onClick={()=> navigate(-1)}><i className="text-zinc-400 text-2xl ri-arrow-left-line"></i></h1>
         </nav>
       </div>
-      <div className='flex'>
-      <div className='w-[15%]'>
+      <div className='flex flex-col items-center md:items-start md:flex-row'>
+      <div className='w-[15%] hidden md:block'>
         {/* Left Side */}
           <img src={`https://image.tmdb.org/t/p/original/${info.detailbackdrop_path || info.detail.poster_path || info.detail.profile_path || NoImage}`} alt="" />
 
@@ -85,7 +86,8 @@ const PersonDetails = () => {
 
         {/* Right Side */}
 
-        <div className='w-[85%] px-10 text-zinc-300'>
+        <div className='w-[85%] px-0 md:px-10 text-zinc-300'>
+            <img className='block md:hidden mb-2' src={`https://image.tmdb.org/t/p/original/` + info.detail.profile_path || info.detail.poster_path || info.detail.backdrop_path} alt="" />
             <h1 className='text-4xl font-bold'>{info.detail.name}</h1>
 
             <div className='w-full'>
@@ -98,8 +100,8 @@ const PersonDetails = () => {
               <HorizontalCards data={info.combinedCredits.cast}/>
             </div>
 
-            <div className='mt-2 flex justify-between'>
-              <h1 className='text-2xl text-bold'>Acting</h1>
+            <div className='mt-2 flex flex-col md:flex-row md:justify-between'>
+              <h1 className='text-2xl text-bold m-2'>Acting</h1>
               <Dropdown title="category" options={["tv", "movie"]}  func={(e)=> setcategory(e.target.value)}/>
             </div>
 

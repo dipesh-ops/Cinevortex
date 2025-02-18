@@ -7,7 +7,7 @@ const Header = ({data}) => {
         <div>
             <div className="absolute w-2/4 p-4 top-20 bg-linear-to-l from-transperent to-blue-500">
             <h1 className="text-5xl font-bold mb-1">{original_title || title || original_name}</h1>
-            <p>{overview && overview.slice(0, 200)}</p>
+            <p className="hidden md:hidden lg:block">{overview && overview.slice(0, 200)}</p>
             <i className="text-yellow-200 ri-megaphone-fill mr-2"> {first_air_date || "No information"}</i>
             <i className="text-yellow-200 ri-movie-2-fill"> {media_type}</i>
             <div className="mt-3">

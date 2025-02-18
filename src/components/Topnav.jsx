@@ -23,17 +23,17 @@ const Topnav = () => {
   }
   
   return (
-    <div className="relative ml-[30%]">
-      <div className="w-full">
-      <i className="ri-search-line text-2xl mr-5"></i>
-      <input value={query} onChange={(e)=> setQuery(e.target.value)} className="w-[30%] mr-5 outline-none border-none text-zinc-400 p-3" type="text" placeholder="search here"/>
+    <div className="relative md:ml-[30%]">
+      <div className="w-[250px] ml-0 md:ml-0 md:w-full lg:w-full">
+      <i className="ri-search-line text-2xl mr-5 pl-5"></i>
+      <input value={query} onChange={(e)=> setQuery(e.target.value)} className="w-[63%] md:w-[30%] mr-0 md:mr-5 outline-none border-none text-zinc-400 p-3" type="text" placeholder="search here"/>
       {
         query.length > 0 && 
         <i onClick={()=> setQuery("")} className="ri-close-large-line text-2xl"></i>
       }
 
       { query ? 
-        <div className="w-[60%] h-[50vh] top-[90%] mt-2 bg-zinc-400 absolute overflow-x-scroll z-1">
+        <div className="w-[100%] md:w-[120%] h-[50vh] top-[90%] mt-2 bg-zinc-400 absolute overflow-x-scroll z-1">
         {
           query &&
           searches.map((search, i)=>(

@@ -52,7 +52,8 @@ const People = () => {
       }, [category])
   return person.length > 0 ? (
     <div>
-      <div className="text-white p-4 flex justify-between">
+      
+      <div className="text-white p-4 flex flex-col md:flex-row md:justify-between">
         <div className="flex text-zinc-300 w-[30vh]">
         <i onClick={()=> navigate(-1)} className="text-2xl hover:text-[#6160C4] ri-arrow-left-line"></i>
         <h1 className="text-2xl font-semibold">person <small>({category})</small></h1>

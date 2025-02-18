@@ -22,7 +22,7 @@ const MovieDetails = () => {
 
 
   return info ? (
-    <div className='w-screen h-[150vh] px-20' style={{background: `linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5), rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path || info.detail.poster_path})`, backgroundPosition :"center", backgroundSize:"cover"}}>
+    <div className='w-screen h-[150vh] md:px-10 lg:px-20' style={{background: `linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5), rgba(0,0,0,.8)), url(https://image.tmdb.org/t/p/original/${info.detail.backdrop_path || info.detail.poster_path})`, backgroundPosition :"center", backgroundSize:"cover"}}>
       {/* Part 1 navigation */}
       <nav className='w-full h-[10vh] flex items-center gap-5 text-zinc-300'>
       <Link onClick={()=> navigate(-1)} className="ri-arrow-left-line text-2xl"></Link>
@@ -32,9 +32,9 @@ const MovieDetails = () => {
       </nav>
       
       {/* Part 2 */}
-      <div className='flex'>
-        <div className="shadow-[4px_7px_17px_3px_rgba(0,0,0.5)] w-[20%]">
-            <img className='w-full h-full' src={`https://image.tmdb.org/t/p/original/${info.detail.poster_path || info.detail.backdrop_path || info.detail.poster_path}`} alt="no image" />
+      <div className='flex items-center md:items-start flex-col md:flex-row'>
+        <div className="shadow-[4px_0px_17px_3px_rgba(0,0,0.5)] w-[20vh] lg:w-[20%]">
+            <img className='md:w-[250px] lg:w-full md:h-full lg:h-full' src={`https://image.tmdb.org/t/p/original/${info.detail.poster_path || info.detail.backdrop_path || info.detail.poster_path}`} alt="no image" />
           </div>
 
           <div className='pl-5 w-[80%]'>
@@ -45,7 +45,7 @@ const MovieDetails = () => {
 
             </div>
 
-            <div className='flex text-white items-center gap-2'>
+            <div className='flex text-white items-center gap-2 flex-col md:flex-row'>
             {info.detail.vote_average && <div className="w-[50px] h-[50px] text-white flex justify-center items-center rounded-full bg-amber-300">
                     {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
                 </div>} 
@@ -64,7 +64,7 @@ const MovieDetails = () => {
                 <p className=''>{info.detail.overview}</p>
               </div>
 
-              <div className='text-white mt-4'>
+              <div className='text-white mt-4 hidden md:block'>
                 <h1 className='font-bold text-2xl'>Translated</h1>
                 <p>{info.translations.join(", ")}</p>
               </div>
@@ -77,8 +77,8 @@ const MovieDetails = () => {
 
       {/* Part 3 Available on*/}
 
-      <div className='text-white my-5'>
-          {info.watchprovider && <div className='flex gap-5'>
+      <div className='text-white my-5 mx-10'>
+          {info.watchprovider && <div className='flex flex-col md:flex-row gap-5'>
               <h1>Available on Platforms</h1>
               <div className='w-10 flex gap-3'>
                 {info.watchprovider && info.watchprovider.flatrate && info.watchprovider.flatrate.map((f, i)=> (<img className='rounded' key={i} title={f.provider_name} src={`https://image.tmdb.org/t/p/original/${f.logo_path}`} alt=''/>))}
@@ -86,7 +86,7 @@ const MovieDetails = () => {
           </div>}
 
           <div>
-            {info.watchprovider && <div className='flex gap-5 mt-5'>
+            {info.watchprovider && <div className='flex flex-col md:flex-row gap-5 mt-5'>
                 <h1>Available on Rent</h1>
                 <div className='w-10 flex gap-3'>
                   {info.watchprovider &&  info.watchprovider.rent &&info.watchprovider.rent.map((f, i)=> (<img title={f.provider_name} className='rounded' key={i} src={`https://image.tmdb.org/t/p/original/${f.logo_path}`} alt=''/>))}
@@ -95,7 +95,7 @@ const MovieDetails = () => {
           </div>
 
           <div>
-            {info.watchprovider && <div className='flex gap-5 mt-5'>
+            {info.watchprovider && <div className='flex flex-col md:flex-row gap-5 mt-5'>
                 <h1>Available to Buy</h1>
                 <div className='w-10 flex gap-3'>
                   {info.watchprovider && info.watchprovider.buy && info.watchprovider.buy.map((f, i)=> (<img title={f.provider_name} className='rounded' key={i} src={`https://image.tmdb.org/t/p/original/${f.logo_path}`} alt=''/>))}
